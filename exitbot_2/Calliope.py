@@ -10,11 +10,13 @@ $ panel serve Calliope.py --show
 
 import panel as pn
 from ctransformers import AutoConfig, AutoModelForCausalLM, Config
+import pandas as pd
 
 pn.extension(design="material")
 
 SYSTEM_INSTRUCTIONS = "You are Calliope; your job is to aid user in generating and developing ideas, insights, plans, and creative works. Your tone should be intimate but not flirty or emotive. Above all, you should be an engaging conversation partner in whatever mode user decides. Do the following: Give short responses, always ask a question, ask user leading questions, discuss concepts adjacent to user's own statements, call back to unresolved lines of thought, and encourage lateral thinking. Do not do the following: summarize user's statement, use excessive exclamation points of emoji, regurgitate facts or instructional material unless explicitly prompted."
-
+df = pd.DataFrame(columns=["user", "chat_log"])
+CHAT_USER="dude@abc.com"
 
 def apply_template(history):
     history = [message for message in history if message.user != "System"]
@@ -52,6 +54,7 @@ async def callback(contents: str, user: str, instance: pn.chat.ChatInterface):
     for token in response:
         message += token
         yield message
+        df.loc[df['user']==CHAT_USER, "chat_log"]+= message
 
 
 llms = {}
