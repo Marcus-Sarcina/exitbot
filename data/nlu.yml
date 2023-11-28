@@ -49,39 +49,126 @@ nlu:
     - no way
     - not really
 
-- intent: mood_great
+- intent: create_profile
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - setup profile
+    - set up
+    - fill out
+    - introduce myself
+    - tell you about myself
+    - get started
+    - introduction
+    - create profile
+    - create my profile
+    - create a profile
 
-- intent: mood_unhappy
+- intent:   review_profile
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - my profile
+    - review
+    - display
+    - show
+    - show me my profile
+    - show profile
+
+- intent:   update_profile
+  examples: |
+    - change my profile
+    - change information
+    - update profile
+    - update information
+    - new information
+    - change some things
+    - update some things
+    - update
+    - change
+
+- intent:   add_background
+  examples: |
+    - biography
+    - bio
+    - my bio
+    - new bio
+    - my background
+    - new background
+    - my education
+    - new education
+    - education
+    - my work experience
+    - my work
+    - professional experience
+    - professional background
+    - profession
+    - my work history
+    - work history
+    - my education history
+    - education history
+    - my education
+    - my education background
+    - my work background
+    - what I do
+    - what I'm about
+    - who I am
+    - where I come from
+    - what I've done
+    - life story
+
+
+- intent:   review_background
+  examples: |
+    - my 
+
+- intent:   update_background
+  examples: |
+    - my
+
+- intent:   add_skill
+  examples: |
+    - my
+
+- intent:   review_skill
+  examples: |
+    - my
+
+- intent:   update_skill
+  examples: |
+    - my
+
+- intent:   add_project
+  examples: |
+    - my
+
+- intent:   review_projects
+  examples: |
+    - my
+
+- intent:   update_projects
+  examples: |
+    - my
+
+- intent:   add_assistance_offer
+  examples: |
+    - my
+
+- intent:   review_assistance_offers
+  examples: |
+    - my
+
+- intent:   update_assistance_offers
+  examples: |
+    - my
+
+- intent:   set_privacy
+  examples: |
+    - my
+
+- intent:   review_privacy
+  examples: |
+    - my
+
+- intent:   update_privacy
+  examples: |
+    - my
 
 - intent: bot_challenge
   examples: |
