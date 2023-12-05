@@ -1,8 +1,10 @@
 """
-Demonstrates how to use the `ChatInterface` to create a chatbot using
-[Mistral](https://docs.mistral.ai) through
-[CTransformers](https://github.com/marella/ctransformers). The chatbot includes a
-memory of the conversation history.
+'Calliope'
+A locally deployable Mistral7B based chatbot optimized to function as a 
+conversation partner and idea generator.
+
+Adapted from the example provided at:
+https://github.com/holoviz-topics/panel-chat-examples/blob/main/docs/examples/mistral/mistral_with_memory.py
 
 To execute:
 $ panel serve Calliope.py --show
@@ -30,13 +32,13 @@ def apply_template(history):
     # Print the updated DataFrame
     print(messages_df)
 
-    history = [message for message in history if message.user != "System"]
+    history = [message for message in history if message.user != "Calliope"]
     prompt = ""
     for i, message in enumerate(history):
         if i == 0:
             prompt += f"<s>[INST]{SYSTEM_INSTRUCTIONS} {message.object}[/INST]"
         else:
-            if message.user == "Mistral":
+            if message.user == "Calliope":
                 prompt += f"{message.object}</s>"
             else:
                 prompt += f"""[INST]{message.object}[/INST]"""
@@ -74,10 +76,10 @@ async def callback(contents: str, user: str, instance: pn.chat.ChatInterface):
 llms = {}
 chat_interface = pn.chat.ChatInterface(
     callback=callback,
-    callback_user="Mistral",
+    callback_user="Calliope",
 )
 chat_interface.send(
-    "Hello, I am Calliope. What are you thinking about today?", user="System", respond=False
+    "Hello, I am Calliope. What are you thinking about today?", user="Calliope", respond=False
 )
 
 chat_interface.servable()
