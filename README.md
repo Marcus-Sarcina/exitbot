@@ -20,7 +20,7 @@ Exit Group is a fraternal organization dedicated to ending reliance on corporate
 * Applied t-SNE model to find clusters of individuals in our two datasets.
 * Ran multiple plots along different dimensions of our sample data.
 * In a production app, this model would be fronted by a GUI engine for choosing plot parameters and exploring points within the plot.
-
+* There is the ability to algorithmically group users based on how similar their bio's are, and call each group to produce an output of each user. When testing we were able to identify unique groups that correlated to different sets of users (eg. law & finance specialists, software devs, crypto traders, outdoors enthusiasts, marketers, etc)
 
 ### Chromadb RAG
 ![RAG Query](RAG-query.jpg)
